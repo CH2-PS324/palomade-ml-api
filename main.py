@@ -12,9 +12,13 @@ app = Flask(__name__)
 app.config['ALLOWED_EXTENSIONS'] = set(['png', 'jpg', 'jpeg'])
 app.config['UPLOAD_FOLDER'] = 'static/uploads/'
 
-app.config['MODEL_SAWIT'] = 'models/model_sawit.h5'
+app.config['MODEL_SAWIT'] = 'models/model_bongkahan_v2.h5'
+# app.config['MODEL_SAWIT_2'] = 'models/model_bongkahan_v2.h5'
+
+
 
 model_sawit = load_model(app.config['MODEL_SAWIT'], compile=False)
+# model_sawit_2 = load_model(app.config['MODEL_SAWIT_2'], compile=False)
 
 def allowed_file(filename):
     return '.' in filename and \
@@ -43,12 +47,14 @@ def predict_bongkahan():
             x = np.expand_dims(x, axis=0)
             x = x / 255
             result = model_sawit.predict(x)[0][0]
+            # result2 = model_sawit_2.predict(x)[0][0]
             if(result > 0.5):
                 return jsonify({
                     'status': {
                         'code': 200,
                         'message': 'Success predicting',
-                        'data': { 'class': 'Mentah', 'precentase': int(result * 100) }
+                        'data': { 'class': 'Mentah', 'precentase': int(result * 100) },
+                        # 'data2': { 'class': 'Mentah', 'precentase': int(result2 * 100) }
                     }
                 }), 200
             else:
@@ -56,7 +62,8 @@ def predict_bongkahan():
                     'status': {
                         'code': 200,
                         'message': 'Success predicting',
-                        'data': { 'class': 'Matang', 'precentase': (100 - int(result * 100)) }
+                        'data': { 'class': 'Matang', 'precentase': (100 - int(result * 100)) },
+                        # 'data2': { 'class': 'Matang', 'precentase': (100 - int(result2 * 100)) }
                     }
                 }), 200
         else:
