@@ -53,7 +53,7 @@ def predict_bongkahan():
                     'status': {
                         'code': 200,
                         'message': 'Success predicting',
-                        'data': { 'class': 'Mentah', 'precentase': int(result * 100) },
+                        'data': { 'classType': 'Mentah', 'precentase': int(result * 100) },
                         # 'data2': { 'class': 'Mentah', 'precentase': int(result2 * 100) }
                     }
                 }), 200
@@ -62,7 +62,7 @@ def predict_bongkahan():
                     'status': {
                         'code': 200,
                         'message': 'Success predicting',
-                        'data': { 'class': 'Matang', 'precentase': (100 - int(result * 100)) },
+                        'data': { 'classType': 'Matang', 'precentase': (100 - int(result * 100)) },
                         # 'data2': { 'class': 'Matang', 'precentase': (100 - int(result2 * 100)) }
                     }
                 }), 200
