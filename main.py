@@ -12,7 +12,7 @@ app = Flask(__name__)
 app.config['ALLOWED_EXTENSIONS'] = set(['png', 'jpg', 'jpeg'])
 app.config['UPLOAD_FOLDER'] = 'static/uploads/'
 
-app.config['MODEL_SAWIT'] = 'models/model_bongkahan_v2.h5'
+app.config['MODEL_SAWIT'] = 'models/model-brondolan9desember.h5'
 # app.config['MODEL_SAWIT_2'] = 'models/model_bongkahan_v2.h5'
 
 
