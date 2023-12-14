@@ -17,7 +17,7 @@ app.config['UPLOAD_FOLDER'] = 'static/uploads/'
 # Load Model
 app.config['MODEL_BONGKAHAN'] = 'models/bongkahan/model_bongkahan_v2.h5'
 app.config['MODEL_BRONDOLAN'] = 'models/brondolan/model-brondolan.h5'
-app.config['MODEL_NON_SAWIT'] = 'models/deteksi-sawit/model-nonsawit.h5'
+app.config['MODEL_NON_SAWIT'] = 'models/deteksi-sawit/model-nonsawit_v2.h5'
 
 # Assign to variable
 model_non_sawit = load_model(app.config['MODEL_NON_SAWIT'], compile=False)
