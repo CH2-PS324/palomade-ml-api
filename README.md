@@ -64,3 +64,23 @@ python main.js
       }
   }
   ``` 
+- **Error Respone:**
+  
+  Error Type is Empty
+  ```json
+  {
+       "status": {
+           "code": 400,
+           "message": "Invalid type of scan. Please choose bongkahan or brondolan."
+       }
+   }
+  ```
+  Error Invalid Format File
+  ```json
+   {
+       "status": {
+           "code": 400,
+           "message": "Invalid file format. Please upload a JPG, JPEG, or PNG image."
+       }
+   }
+  ```
