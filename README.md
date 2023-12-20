@@ -41,15 +41,14 @@ python main.js
 
 ## API Endpoints
 
-### 1.  Predict Sawit
+### 1.  Predict Sawit Bongkahan
 
 - **Method:** `POST`
-- **Path:** `/predict`
-- **Description:** endpoint for predict sawit
+- **Path:** `/predict-bongkahan`
+- **Description:** endpoint for predict sawit bongkahan
 - **Request Body (form-data):**
   ```form-data
     image = Image (*jpg/png/jpeg)
-    type = "brondolan" or "bongkahan"
   ```
 - **Response Body:**
   ```json
@@ -66,15 +65,40 @@ python main.js
   ``` 
 - **Error Respone:**
   
-  Error Type is Empty
+  Error Invalid Format File
   ```json
-  {
+   {
        "status": {
            "code": 400,
-           "message": "Invalid type of scan. Please choose bongkahan or brondolan."
+           "message": "Invalid file format. Please upload a JPG, JPEG, or PNG image."
        }
    }
   ```
+
+### 2.  Predict Sawit Brondolan
+
+- **Method:** `POST`
+- **Path:** `/predict-brondolan`
+- **Description:** endpoint for predict sawit brondolan
+- **Request Body (form-data):**
+  ```form-data
+    image = Image (*jpg/png/jpeg)
+  ```
+- **Response Body:**
+  ```json
+  {  
+      "status": {
+          "code": 200,
+          "data": {
+              "classType": "Brondolan Sawit Matang",
+              "precentase": 100
+          },
+          "message": "Success predicting"
+      }
+  }
+  ``` 
+- **Error Respone:**
+  
   Error Invalid Format File
   ```json
    {
