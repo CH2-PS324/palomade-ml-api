@@ -9,13 +9,11 @@ steps:
       - run
       - deploy
       - 'api-model-sawit'
-      - '--image'
-      - 'gcr.io/$PROJECT_ID/sawit-palomade:$COMMIT_SHA'
-      - '--region'
-      - 'us-central1'
-      - '--memory'
-      - '1024Mi'
+      - '--image=gcr.io/$PROJECT_ID/sawit-palomade:$COMMIT_SHA'
+      - '--region=us-central1'
+      - '--cpu=2'
+      - '--memory=2048Mi'
       - '--allow-unauthenticated'
 images:
   - 'gcr.io/$PROJECT_ID/sawit-palomade:$COMMIT_SHA'
-logsBucket: 'gs://bangkitcapstone-palomade-bucket/logs'
+logsBucket: 'gs://palomade-bucket/logs'
