@@ -9,8 +9,8 @@ from tensorflow.keras.preprocessing import image as tf_image
 from flask_cors import CORS
 
 load_dotenv()
-app = Flask(__name__)
-CORS(app)
+app = Flask(__name__)   
+cors = CORS(app, resources={r"/*": {"origins": "*"}})
 
 # Set Allowed Extension for Upload File
 app.config['ALLOWED_EXTENSIONS'] = set(['png', 'jpg', 'jpeg'])
