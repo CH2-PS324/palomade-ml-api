@@ -1,8 +1,14 @@
 steps:
+   - name: gcr.io/cloud-builders/docker
+    args:
+      - "build"
+      - "-t"
+      - "us-central1-docker.pkg.dev/$PROJECT_ID/palomade/palomade-ml:$COMMIT_SHA"
+      - "."
   - name: gcr.io/cloud-builders/docker
-    args: ['build', '-t', 'gcr.io/$PROJECT_ID/sawit-palomade:$COMMIT_SHA', '.']
-  - name: gcr.io/cloud-builders/docker
-    args: ['push', 'gcr.io/$PROJECT_ID/sawit-palomade:$COMMIT_SHA']
+    args:
+      - "push"
+      - "us-central1-docker.pkg.dev/$PROJECT_ID/palomade/palomade-ml:$COMMIT_SHA"
   - name: gcr.io/google.com/cloudsdktool/cloud-sdk
     entrypoint: gcloud
     args:
