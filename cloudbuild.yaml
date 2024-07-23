@@ -16,4 +16,4 @@ steps:
       - '--allow-unauthenticated'
 images:
   - 'gcr.io/$PROJECT_ID/sawit-palomade:$COMMIT_SHA'
-logsBucket: 'gs://palomade-bucket/logs'
+logsBucket: 'gs://palomade-storage/logs'
