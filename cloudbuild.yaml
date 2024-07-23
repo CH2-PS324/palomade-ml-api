@@ -15,7 +15,7 @@ steps:
       - run
       - deploy
       - 'api-model-sawit'
-      - '--image=gcr.io/$PROJECT_ID/sawit-palomade:$COMMIT_SHA'
+      - '--image=us-central1-docker.pkg.dev/$PROJECT_ID/palomade/palomade-ml:$COMMIT_SHA'
       - '--region=us-central1'
       - '--cpu=2'
       - '--memory=2048Mi'
