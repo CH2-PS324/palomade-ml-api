@@ -18,4 +18,4 @@ steps:
       - '--allow-unauthenticated'
 images:
   - 'gcr.io/$PROJECT_ID/sawit-palomade:$COMMIT_SHA'
-logsBucket: 'gs://bangkitcapstone-palomade-bucket/logs'
+logsBucket: 'gs://mlwspace-bucket/logs'
